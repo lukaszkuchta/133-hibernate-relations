@@ -1,10 +1,7 @@
 package pl.sda.hibernate.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -24,5 +21,6 @@ public class Ocena {
     private LocalDateTime dataCzasDodania;
 
     @ManyToOne
+    @EqualsAndHashCode.Exclude
     private Student uczen;
 }
