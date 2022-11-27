@@ -1,3 +1,5 @@
+package pl.sda.hibernate;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -8,7 +10,7 @@ public class HibernateUtil {
     public final static HibernateUtil INSTANCE = new HibernateUtil();
     private final SessionFactory sessionFactory;
 
-    public HibarnateUtil() {
+    public HibernateUtil() {
         this.sessionFactory = loadConfigFile();
     }
 
