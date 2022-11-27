@@ -3,6 +3,7 @@ package pl.sda.hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pl.sda.hibernate.model.Ocena;
+import pl.sda.hibernate.model.Przedmiot;
 import pl.sda.hibernate.model.Student;
 
 import java.time.LocalDateTime;
@@ -27,10 +28,14 @@ public class Main_dodajOcene {
                 System.out.println("podaj ocene");
                 String dodawanaOcena = scanner.nextLine();
                 double wartoscOceny = Double.parseDouble(dodawanaOcena);
+                System.out.println("podaj przedmiot");
+                String przedmiotString = scanner.nextLine();
+                Przedmiot przedmiot = Przedmiot.valueOf(przedmiotString);
 
                 Ocena nowaOcena = Ocena.builder()
                         .uczen(szukanyStudent)
                         .wartosc(wartoscOceny)
+                        .przedmiot(przedmiot)
                         .build();
 
                 session.persist(nowaOcena);

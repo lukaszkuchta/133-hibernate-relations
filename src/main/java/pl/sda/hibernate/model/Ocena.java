@@ -20,6 +20,9 @@ public class Ocena {
     @CreationTimestamp
     private LocalDateTime dataCzasDodania;
 
+    @Enumerated(value = EnumType.STRING)
+    private Przedmiot przedmiot;
+
     @ManyToOne
     @EqualsAndHashCode.Exclude
     private Student uczen;
